@@ -2,6 +2,9 @@ from django.contrib import admin
 
 from .models import Publicacao, Credito
 
+class CreditoInline(admin.TabularInline):
+    model = Credito
+
 class PublicacaoAdmin(admin.ModelAdmin):
     search_fields = ['titulo']
     fields = (('tipo', 'id_padrao'), 'titulo', 'num_paginas')
@@ -9,6 +12,10 @@ class PublicacaoAdmin(admin.ModelAdmin):
     list_filter = ('tipo',)
     list_editable = ('tipo',)
     list_display_links = ('id_padrao', 'titulo')
+    inlines = [
+        CreditoInline,
+    ]
 
 admin.site.register(Publicacao, PublicacaoAdmin)
 admin.site.register(Credito)
+
