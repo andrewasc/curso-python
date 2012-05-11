@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Lista de Publicações</title>
+        <style>
+            *{font-family:'Trebuchet MS', sans-serif; border-collapse:collapse;}
+            tr:nth-child(odd){background-color:#ddd;}
+            th{background-color:#334455; color:#fff;}
+            td, th{padding:4px; border:solid 1px #bbb;}
+        </style>
+    </head>
+    <body>
+        <h1>Publicações</h1>
+        <table>
+            <tr><th>ID</th><th>Título</th></tr>
+            {%for pub in pubs %}
+                <tr>
+                    <td>{{ pub.id_padrao }}</td>
+                    <td><a href="/cat/pub/{{pub.id}}">{{ pub.titulo }}</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

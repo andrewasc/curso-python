@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>{{pub.titulo}}</title>
+        <style>
+            *{font-family:'Trebuchet MS', sans-serif; border-collapse:collapse;}
+            table{-webkit-border-radius: 8px; border-radius: 8px;}
+            tr:nth-child(odd){background-color:#ddd;}
+            th{background-color:#334455; color:#fff;}
+            td, th{padding:4px; border:solid 1px #bbb;}
+        </style>
+    </head>
+    <body>
+        <h1>{{pub.titulo}}</h1>
+        <table>
+            <tr><th>ID</th><td>{{ pub.id_padrao }}</td></tr>
+            <tr><th>Título</th><td>{{ pub.titulo }}</td></tr>
+            <tr><th>Tipo</th><td>{{ pub.tipo }}</td></tr>
+            <tr><th>Num. páginas</th><td>{{ pub.num_paginas }}</td></tr>
+        </table>
+    </body>
+</html>
