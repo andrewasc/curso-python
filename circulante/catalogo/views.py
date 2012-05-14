@@ -6,6 +6,10 @@ from django.shortcuts import render
 import datetime
 from .models import Publicacao
 
+def home(request):
+    qt_livros = Publicacao.objects.filter(tipo='livro').count()
+    return render(request, 'fluid.html', {'qt_livros':qt_livros})
+
 
 def listar_publicacoes(request, tipo='livro'):
     pubs = Publicacao.objects.filter(tipo=tipo).order_by('titulo')
